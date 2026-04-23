@@ -8,9 +8,12 @@ git status
 git init -v
 echo "## Autohotkey configuration" >> README.me
 git add -A -v
-git status
+scoop install grep
+git status | grep --color=always "new file:"
+git commit -m "$(date)"
 ```
 
-
 ### Auto 
-### Auto
+
+```pwsh
+
