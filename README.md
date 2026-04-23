@@ -10,7 +10,7 @@ echo "## Autohotkey configuration" >> README.me
 git add -A -v
 scoop install grep
 git status | grep --color=always "new file:"
-git commit -m "$(date)"
+git commit -m "$(date)" -v
 ```
 
 ### Auto 
