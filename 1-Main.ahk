@@ -1,6 +1,7 @@
 ; ------------------------------------------------
 ;   a:\win\ahk-scripts\current\1-Main.ahk
 ; ------------------------------------------------
+; Updated Win11 2026-04-24 12:34 Fri
 #Requires AutoHotkey 2
 #SingleInstance Force
 
