@@ -35,13 +35,13 @@ SetTimer () => ToolTip(), -TIPTIME
   ; PID := ProcessExist(PIDOrName)
   if (PID := ProcessExist("komorebi.exe") )
   {
-    MsgBox "komorebi exists and has the Process ID " PID "."
+    ;MsgBox "komorebi ACTIVE with process ID " PID "."
   }
   else
   {
-    MsgBox "komorebi does not exist."
+    ;MsgBox "komorebi NOT running"
     HWND := WinWait("ahk_class Alacritty Pwsh 7",,5)
-    MsgBox "HWND=" . HWND
+    ;MsgBox "HWND=" . HWND
     Sleep 500
     WinActivate HWND
   }

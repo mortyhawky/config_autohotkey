@@ -1,13 +1,8 @@
 ; ------------------------------------------------
 ;   a:\win\ahk-scripts\current\1-Main.ahk
 ; ------------------------------------------------
-#Requires AutoHotkey 2.0.23
+#Requires AutoHotkey 2
 #SingleInstance Force
-
-configHome := EnvGet("Env:XDG_CONFIG_HOME")
-;if (configHome = "")
-;    configHome := A_AppData  ; or any default path
-MsgBox "configHome=" . configHome
 
 CoordMode "ToolTip"
 tipX := 15
@@ -19,6 +14,10 @@ Sleep tipTime/5
 ToolTip()
 ToolTip "  ~   F1:  STARTED..:   " . A_ScriptName . "  ~  ", tipX, tipY
 SetTimer () => ToolTip(), -TIPTIME
+
+xdgConfigHome := EnvGet("XDG_CONFIG_HOME")
+;MsgBox "xdgConfigHome=" . xdgConfigHome
+;MsgBox "A_AppData=" . A_AppData
 
 F1::  Script1Main()
 F2::  Script2User()
@@ -34,7 +33,7 @@ Script1Main()       ; F1
 
 Script2User()       ; F2
 {
-  Run("AutoHotkey /restart /script 2-User.ahk", A_ScriptDir)
+  Run("AutoHotkey.exe /restart /script 2-User.ahk", A_ScriptDir)
 }
 
 

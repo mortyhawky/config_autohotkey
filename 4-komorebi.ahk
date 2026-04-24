@@ -102,6 +102,7 @@ else
 #+1::     Komorebic("move-to-workspace 0") 
 #+2::     Komorebic("move-to-workspace 1") 
 #+3::     Komorebic("move-to-workspace 2") 
+#+4::     Komorebic("move-to-workspace 3") 
 
 ; Resize
 #+l::     Komorebic("resize-axis horizontal increase")
