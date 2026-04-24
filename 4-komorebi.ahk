@@ -1,6 +1,7 @@
 ; ------------------------------------------------
 ;   a:\win\ahk-scripts\current\4-Komorebi.ahk
 ; ------------------------------------------------
+;Updated
 #Requires AutoHotkey 2.0.23
 #SingleInstance Force
 
