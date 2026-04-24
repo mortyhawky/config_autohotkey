@@ -27,6 +27,7 @@ git push -u origin main
 
 #### Clone repo
 ```pwsh
-rm $XDG_CONFIG_HOME/autohotkey
+cd $env:$XDG_CONFIG_HOME
+rm autohotkey
 git clone https://github.com/mortyhawky/config_autohotkey.git autohotkey
 ```
