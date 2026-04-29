@@ -25,7 +25,7 @@ SetTimer () => ToolTip(), -TIPTIME
  #Enter::  
 {
   cmd := 'alacritty --title "Alacritty Pwsh 7"'
-  Run cmd
+  Run 'pwsh.exe -NoLogo -Command ". $PROFILE; Invoke-Alacritty"'
   ;Sleep 300
   ;Komorebic("promote", showTip := false)
   RunWait "komorebic.exe promote"
