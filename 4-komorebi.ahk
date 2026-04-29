@@ -39,11 +39,11 @@ Komorebic(cmd, showTip := true)
   RunWait(format("komorebic.exe {}", cmd), , "Hide" ) 
 }
 
-PID := ProcessExist("komorebi.exe")
-if (PID)
+komoPID := ProcessExist("komorebi.exe")
+if (komoPID)
 {
   ToolTip()
-  ToolTip "  ~  F4 Stopping:  Komorebi with PID/ID = " . PID . "  ~  ", tipX, tipY 
+  ToolTip "  ~  F4 Stopping:  Komorebi with PID/ID = " . komoPID . "  ~  ", tipX, tipY 
   SetTimer(  ()=>ToolTip(),-tipTime  )
   Run "komorebic.exe stop --bar",,"Hide"
   Sleep tipTime
@@ -64,20 +64,20 @@ else
 
   ToolTip()
   ToolTip "  ~   F4 Starting:  komorebi...  Waiting for komorebi-bar.exe...  ~  ", tipX, tipY
-  SetTimer(  ()=>ToolTip(),-(tipTime*2)  )
-  WinWait("ahk_exe komorebi-bar.exe",,7)
-  PID := ProcessExist("komorebi.exe")
+  ;SetTimer(  ()=>ToolTip(),-(tipTime*2)  )
+  WinWait("ahk_exe komorebi-bar.exe",,10)
+  komoPID := ProcessExist("komorebi.exe")
   barPID := ProcessExist("komorebi-bar.exe")
 
-  if (!PID) 
+  if (!komoPID) 
   {
-    MsgBox "PID=" . PID
+    MsgBox "ERROR! komoPID=" . komoPID
     ExitApp
   }
 
-  ToolTip()
-  ToolTip "  ~  komorebi.exe PID/ID = " . PID .  " komorebi-bar.exe PID/ID = " . barPID . "  ~  ", tipX, tipY
-  SetTimer(  ()=>ToolTip(),-tipTime  )
+  ;ToolTip()
+  ToolTip "  ~  komorebi.exe komoPID/ID = " . komoPID .  " komorebi-bar.exe PID/ID = " . barPID . "  ~  ", tipX, tipY+20
+  ;SetTimer(  ()=>ToolTip(),-tipTime  )
   Sleep tipTime
   Retile()
 }
